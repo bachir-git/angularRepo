@@ -11,11 +11,15 @@ import { ProduitMockService } from 'src/app/service/produit.mock.service';
 export class ListeProduitsComponent implements OnInit {
 
   produits :Produit[]
+  selectedProduit ;
   constructor(private produitMockService : ProduitMockService) { }
 
   ngOnInit(): void {
     this.produits = this.produitMockService.getProduits();
 
+  }
+  public selectProduit(produit){
+    this.selectedProduit = produit;
   }
 
 }
