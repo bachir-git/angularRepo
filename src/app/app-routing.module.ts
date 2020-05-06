@@ -1,18 +1,27 @@
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
-import { ListeProduitsComponent } from './produit/liste-produits/liste-produits.component';
+import { ListeProduitsComponent } from './produit/liste/liste-produits.component';
 import { LoginComponent } from './auth/login/login.component';
-import { LogoutComponent } from './auth/logout/logout.component';
-import { AuthGaurdService } from './service/auth-gaurd.service';
-import { CreateProduitsComponent } from './produit/create-produits/create-produits.component';
+import { HomeComponent } from './home/home.component';
+import { ProduitResolver } from './service/produit.resolver.service';
+import { CreerProduitComponent } from './produit/creer/creer-produit.component';
 
 
 const routes: Routes = [
-  { path: '', canActivate: [AuthGaurdService], component: ListeProduitsComponent },
-  { path: 'login', component: LoginComponent },
-  { path: 'logout', canActivate: [AuthGaurdService], component: LogoutComponent },
-  { path: 'produits', canActivate: [AuthGaurdService], component: ListeProduitsComponent },
-  { path: 'ajouter', canActivate: [AuthGaurdService], component: CreateProduitsComponent }
+  {  path: '',  redirectTo: '/home',  pathMatch: 'full' },
+  {  path: 'login',  component: LoginComponent},
+  {  path: 'home',   component: HomeComponent,
+     children: [
+      {  
+        path: '', component: ListeProduitsComponent,
+        outlet: 'homeOutlet',
+        resolve: {
+          products: ProduitResolver
+       }
+   },
+     ]
+  },
+  {  path: 'ajouter-produit',  component: CreerProduitComponent},
 ];
 
 @NgModule({

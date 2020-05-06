@@ -1,15 +1,15 @@
 import { Component, OnInit } from '@angular/core';
 import {FormBuilder, FormGroup, Validators} from "@angular/forms";
 import { ProduitMockService } from 'src/app/service/produit.mock.service';
-import {first} from "rxjs/operators";
+
 import {Router} from "@angular/router";
 
 @Component({
-  selector: 'app-create-produits',
-  templateUrl: './create-produits.component.html',
-  styleUrls: ['./create-produits.component.css']
+  selector: 'app-creer-produit',
+  templateUrl: './creer-produit.component.html',
+  styleUrls: ['./creer-produit.component.css']
 })
-export class CreateProduitsComponent implements OnInit {
+export class CreerProduitComponent implements OnInit {
 
   constructor(private formBuilder: FormBuilder,private router: Router, private produitMockService: ProduitMockService) { }
 
