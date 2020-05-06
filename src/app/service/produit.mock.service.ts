@@ -16,4 +16,9 @@ export class ProduitMockService{
     public getProduits() : Produit[]{
         return this.PRODUITS;
     }
+
+    public setProduits(p: Produit) {
+        console.log(p.quantite);
+        this.PRODUITS.push(p);
+    }
 }

@@ -7,6 +7,7 @@
       <li><a *ngIf="loginService.isUserLoggedIn()" routerLink="/" class="nav-link">Liste des produits</a></li>
       <li><a *ngIf="!loginService.isUserLoggedIn()" routerLink="/login" class="nav-link">Login</a></li>
       <li><a *ngIf="loginService.isUserLoggedIn()" routerLink="/logout" class="nav-link">Logout</a></li>
+      <li><a *ngIf="loginService.isUserLoggedIn()" routerLink="/ajouter" class="nav-link">Ajouter Produit</a></li>
     
     </ul>
       </nav>

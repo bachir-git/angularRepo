@@ -4,13 +4,15 @@ import { ListeProduitsComponent } from './produit/liste-produits/liste-produits.
 import { LoginComponent } from './auth/login/login.component';
 import { LogoutComponent } from './auth/logout/logout.component';
 import { AuthGaurdService } from './service/auth-gaurd.service';
+import { CreateProduitsComponent } from './produit/create-produits/create-produits.component';
 
 
 const routes: Routes = [
   { path: '', canActivate: [AuthGaurdService], component: ListeProduitsComponent },
   { path: 'login', component: LoginComponent },
   { path: 'logout', canActivate: [AuthGaurdService], component: LogoutComponent },
-  { path: 'produits', canActivate: [AuthGaurdService], component: ListeProduitsComponent }
+  { path: 'produits', canActivate: [AuthGaurdService], component: ListeProduitsComponent },
+  { path: 'ajouter', canActivate: [AuthGaurdService], component: CreateProduitsComponent }
 ];
 
 @NgModule({

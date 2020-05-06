@@ -1,4 +1,8 @@
 import { Component, OnInit } from '@angular/core';
+import {FormBuilder, FormGroup, Validators} from "@angular/forms";
+import { ProduitMockService } from 'src/app/service/produit.mock.service';
+import {first} from "rxjs/operators";
+import {Router} from "@angular/router";
 
 @Component({
   selector: 'app-create-produits',
@@ -7,9 +11,26 @@ import { Component, OnInit } from '@angular/core';
 })
 export class CreateProduitsComponent implements OnInit {
 
-  constructor() { }
+  constructor(private formBuilder: FormBuilder,private router: Router, private produitMockService: ProduitMockService) { }
 
-  ngOnInit(): void {
+  addForm: FormGroup;
+
+  ngOnInit() {
+
+    this.addForm = this.formBuilder.group({
+      ref: [],
+      quantite: [],
+      prixunitaire: []
+    });
+
+  }
+
+  ajouter() {
+    
+    this.produitMockService.setProduits(this.addForm.value);
+    
+    this.router.navigate(['produits']);
+
   }
 
 }
