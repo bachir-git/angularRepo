@@ -1,5 +1,6 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
+import { HttpClientModule } from '@angular/common/http'
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
@@ -14,6 +15,10 @@ import { NavbarComponent } from './structure/navbar/navbar.component';
 import { SidebarComponent } from './structure/sidebar/sidebar.component';
 import { ContentComponent } from './structure/content/content.component';
 import { HomeComponent } from './home/home.component';
+import { environment } from "src/environments/environment";
+import { AngularFireModule } from "@angular/fire";
+import { AngularFirestoreModule } from "@angular/fire/firestore";
+import { ProduitService } from './service/produit.service';
 
 @NgModule({
   declarations: [
@@ -31,9 +36,12 @@ import { HomeComponent } from './home/home.component';
     BrowserModule,
     AppRoutingModule,
     FormsModule,
-    ReactiveFormsModule
+    HttpClientModule,
+    ReactiveFormsModule,
+    AngularFireModule.initializeApp(environment.firebaseConfig),
+    AngularFirestoreModule,
   ],
-  providers: [ProduitMockService,AuthentificationService,AuthGaurdService],
+  providers: [ProduitMockService,AuthentificationService,AuthGaurdService,ProduitService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
