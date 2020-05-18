@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Produit } from 'src/app/models/produit';
-import { ProduitService } from 'src/app/service/produit.service';
+import { CrudService } from 'src/app/service/crud.service';
 
 
 @Component({
@@ -12,11 +12,11 @@ export class ListeProduitsComponent implements OnInit {
 
   produits: Produit[];
   selectedProduit;
-  constructor(private produitService: ProduitService) { }
+  constructor(private crudService: CrudService) { }
 
   ngOnInit(): void {
 
-    this.produitService.listProduits()
+    this.crudService.getAll("PRODUITS")
       .subscribe(response => {
         this.produits = response.map(document => {
           return {
