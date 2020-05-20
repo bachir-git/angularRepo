@@ -2,8 +2,10 @@ import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
 import { LoginComponent } from './auth/login/login.component';
 import { HomeComponent } from './home/home.component';
-import { CreerProduitComponent } from './produit/creer/creer-produit.component';
 import { ListeUsersComponent } from './users/liste-users/liste-users.component';
+import { ListeProduitsComponent } from './produits/liste-produits/liste-produits.component';
+
+
 
 
 const routes: Routes = [
@@ -12,12 +14,12 @@ const routes: Routes = [
   {  path: 'home',   component: HomeComponent,
      children: [
       {  
-        path: '', component: ListeUsersComponent,
+        path: '', component: ListeProduitsComponent,
         outlet: 'homeOutlet',
    },
      ]
   },
-  {  path: 'ajouter-produit',  component: CreerProduitComponent},
+
   {  path: 'liste-users',  component: ListeUsersComponent},
 ];
 
