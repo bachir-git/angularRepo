@@ -9,6 +9,7 @@ import { AuthentificationService } from './service/authentification.service';
 })
 export class AppComponent {
 
+   title = "MyApplication";
   constructor(private authenticate: AuthentificationService,
     private router: Router){}
   ngOnInit(){

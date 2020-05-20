@@ -5,8 +5,6 @@ import { BrowserAnimationsModule } from "@angular/platform-browser/animations";
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
-import { ListeProduitsComponent } from './produit/liste/liste-produits.component';
-import { CreerProduitComponent } from './produit/creer/creer-produit.component';
 import { LoginComponent } from './auth/login/login.component';
 import { AuthentificationService } from './service/authentification.service';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
@@ -23,20 +21,26 @@ import { DialogEditComponent } from './users/dialog-edit/dialog-edit.component';
 import { DialogAddComponent } from './users/dialog-add/dialog-add.component';
 import { ListeUsersComponent } from './users/liste-users/liste-users.component';
 import { CrudService } from './service/crud.service';
+import { ListeProduitsComponent } from './produits/liste-produits/liste-produits.component';
+import { DialogAddProduitComponent } from './produits/dialog-add-produit/dialog-add-produit.component';
+import { DialogDeleteProduitComponent } from './produits/dialog-delete-produit/dialog-delete-produit.component';
+import { DialogUpdateProduitComponent } from './produits/dialog-update-produit/dialog-update-produit.component';
 
 @NgModule({
   declarations: [
     AppComponent,
-    ListeProduitsComponent,
     LoginComponent,
     NavbarComponent,
     SidebarComponent,
     HomeComponent,
-    CreerProduitComponent,
     DialogDeleteComponent,
     DialogEditComponent,
     DialogAddComponent,
     ListeUsersComponent,
+    ListeProduitsComponent,
+    DialogAddProduitComponent,
+    DialogDeleteProduitComponent,
+    DialogUpdateProduitComponent,
 
   ],
   imports: [
