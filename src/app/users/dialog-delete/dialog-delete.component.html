@@ -1,0 +1,18 @@
+<div class="container">
+    <h3 mat-dialog-title>Êtes-vous sûr de vouloir supprimer cet utilisateur?</h3>
+    <div mat-dialog-content>
+      Id: {{data.id}}
+      <p></p>
+      Login : {{data.userName}}
+      <p></p>
+      Nom : {{data.firstName}}
+      <p></p>
+      Prénom : {{data.lastName}}
+      <p></p>
+    </div>
+  
+    <div mat-dialog-actions>
+      <button mat-button [mat-dialog-close]="1" (click)="confirmDelete()">Delete</button>
+      <button mat-button (click)="closeDialog()" tabindex="-1">Cancel</button>
+    </div>
+  </div>
