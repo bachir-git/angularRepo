@@ -58,9 +58,9 @@ export class ListeUsersComponent implements OnInit {
     });
   }
 
-  deleteItem(i: number, id: number, title: string, state: string, url: string) {
+  deleteItem(i: number, id: String, userName: string, firstName: string, lastName: string) {
     const dialogRef = this.dialog.open(DialogDeleteComponent, {
-      data: { id: id, title: title, state: state, url: url }
+      data: {id:id, userName:userName, firstName:firstName, lastName:lastName}
     });
 
     dialogRef.afterClosed().subscribe(result => {

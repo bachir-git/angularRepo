@@ -9,18 +9,32 @@ import { ListeProduitsComponent } from './produits/liste-produits/liste-produits
 
 
 const routes: Routes = [
-  {  path: '',  redirectTo: '/home',  pathMatch: 'full' },
-  {  path: 'login',  component: LoginComponent},
-  {  path: 'home',   component: HomeComponent,
-     children: [
-      {  
-        path: '', component: ListeProduitsComponent,
-        outlet: 'homeOutlet',
-   },
-     ]
+  {
+    path: 'home',
+    component: HomeComponent
   },
-
-  {  path: 'liste-users',  component: ListeUsersComponent},
+  {
+    path: 'login',
+    component: LoginComponent
+  },
+  {
+    path: 'produits',
+    component: ListeProduitsComponent
+  },
+  {
+    path: 'users',
+    component: ListeUsersComponent
+  },
+  {
+    path: '',
+    redirectTo: '/home',
+    pathMatch: 'full'
+  },
+  {
+    path: '**',
+    redirectTo: '/home',
+    pathMatch: 'full'
+  }
 ];
 
 @NgModule({

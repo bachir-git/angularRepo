@@ -7,12 +7,12 @@
           routerLinkActive="active">Dashboard</a>
       </li>
       <li class="nav-item">
-        <a class="nav-link" routerLink="produit"
+        <a class="nav-link" [routerLink]="['/produits']"
           *ngIf="hasRoleUser()"
           routerLinkActive="active">Produits</a>
       </li>
       <li class="nav-item">
-        <a class="nav-link" routerLink="liste-users"
+        <a class="nav-link" [routerLink]="['/users']"
         *ngIf="hasRoleAdmin()"
         routerLinkActive="active">Utilisateurs</a>
       </li>
